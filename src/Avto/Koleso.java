@@ -6,12 +6,13 @@ import java.util.Scanner;
 
 public class Koleso {
     
-    private double shirina;
-    private double visota;
-    private double diametr;
-    private String tip_diska;
+    public double shirina;
+    public double visota;
+    public double diametr;
+    public String tip_diska;
     private double otnoschenie;
     private int id;
+    protected int kolvo_prokolov;
     
     private static int id_kolesa = 0;
     private static int kolvo_koles = 0;

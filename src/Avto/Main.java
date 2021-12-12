@@ -136,8 +136,9 @@ public class Main {
                     
                 case 4:
                     key = 9;
+                    Koleso_Zapaska Zapaska = new Koleso_Zapaska();
                     do {
-                        System.out.println("Последний уникальный ID: " + Koleso.id_return() + "\nОбщее количество добавленных колес: " + Koleso.kolvo_return() + "\n\n1) Ввод собственных данных о колесах\n2) Ввод данных по конструктору\n3) Удаление\n\n0) - выход\n\n");
+                        System.out.println("Последний уникальный ID: " + Koleso.id_return() + "\n\n1) Ввод собственных данных о колесах\n2) Ввод данных по конструктору\n");
                         key = in1.nextInt();
                         switch (key) {
                         case 1:
@@ -146,18 +147,35 @@ public class Main {
                         case 2:
                             kolesiko.new_koleso(225, 17, 55, "Литье");
                             break;
-                        case 3:
-                            if (Koleso.kolvo_return() > 0)
-                            {
-                                Koleso.koleso_del();
-                            }
-                            break;
                         }
+                        System.out.print("Введите количество  проколов в шине: ");
+                        int n;
+                        n = in1.nextInt();
+                        kolesiko.kolvo_prokolov = n;
+                        Zapaska.kolvo_prokolov = n;
                         kolesiko.prosmotr_koleso();     
-                        
-                    } while (key != 0);
-                    break;  
-                    
+                        System.out.println("Введите тип запасного колеса\n\n1) Полноразмерное\n2) Докатка\n3) Отсутствует");    
+                        key = in1.nextInt();
+                        switch (key) {
+                        case 1:
+                            
+                            Zapaska.set_new();
+                            Zapaska.set_vid("Полноразмерное");
+                            break;
+                        case 2:
+                            
+                            Zapaska.new_koleso_info();
+                            Zapaska.set_vid("Докатка");
+                            break;
+                        case 3:
+                            Zapaska.set_vid("Отсутствует");
+                            break;
+                        } 
+                        System.out.println();
+                        kolesiko.prosmotr_koleso();
+                        System.out.println();
+                        Zapaska.print();
+                    }while (key != 0);
                 case 5:
                     key = 9;
                     do {
@@ -175,12 +193,32 @@ public class Main {
                     break;
                 case 6:
                     key = 9;
+                    Koleso_Zapaska Zapaska1 = new Koleso_Zapaska();
+                    Koleso Kol2 = new Koleso();
+                    Kol2.new_koleso(265, 21, 35, "Литье");
+                    Zapaska1.set1(17, 235, 60, "Литье", "Полноразмерное");
+                    System.out.print("Конструктор без вызова конструктора базового класса\n");
+                    Kol2.prosmotr_koleso();
+                    System.out.println();
+                    Zapaska1.print();
+                    System.out.println();
+                    System.out.print("\nКонструктор с вызовом конструктора базового класса\n");
+                    Zapaska1.set2(20, 185, 65, "Литье", "Докатка");
+                    System.out.println();
+                    Kol2.new_koleso(265, 21, 35, "Литье");
+                    System.out.println();
+                    Kol2.prosmotr_koleso();
+                    System.out.println();
+                    Zapaska1.print();
+                    System.out.println();
+                    /*
                     Koleso kol1 = new Koleso();
                     Koleso kol2 = new Koleso(12);
                     System.out.println("Констуктор без параметров: \n");
                     kol1.prosmotr_koleso();
                     System.out.println("Констуктор с одним параметром: \n");
                     kol2.prosmotr_koleso();
+                    */
                     /*
                     System.out.println("Введите количество коробок в массиве: ");
                     int n;
