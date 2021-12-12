@@ -95,7 +95,9 @@ public class Main {
                         case 3:
                             if (motorishe.klapan >= 0)
                             {
-                                motorishe.prosmotr_motor();
+                                System.out.printf("%s",motorishe.toString());
+                                System.out.println();
+                                //motorishe.prosmotr_motor();
                             }
                             else
                             {

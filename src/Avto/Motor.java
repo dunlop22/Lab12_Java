@@ -17,6 +17,11 @@ public class Motor {
             he.vsego += this.koni;
         }     
 
+    public String toString()
+    {
+        return("Маркировка: " + this.name + "\nРабочий объем: " + this.rab_obem + "\nКоличество клапанов: " + this.klapan + "\nКоличество цилиндров: " + this.kol_vo_cilindr + "\nРасход: " + this.rasxod + "\nКоличество лошадиных сил: " + this.koni );
+    }
+    
     public void new_motor_info()
     {
         Scanner in = new Scanner(System.in);        //инициализация сканера
