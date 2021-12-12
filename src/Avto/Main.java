@@ -47,7 +47,7 @@ public class Main {
         Scanner in = new Scanner(System.in);        //инициализация сканера
         do
 	{
-            System.out.println("1) Общее\n2) Двигатель\n3) Коробка\n4) Колеса\n5) Автомобиль\n6) Конструкторы\n7) Конструктор производного класса с параметрами вызова конструктора базового класса\n8) Абстрактный класс\n\n0) - выход");
+            System.out.println("1) Общее\n2) Двигатель\n3) Коробка\n4) Колеса\n5) Автомобиль\n6) Конструкторы\n7) Конструктор производного класса с параметрами вызова конструктора базового класса\n8) Абстрактный класс\n9) Интерфейс\n\n0) - выход");
             main_key = in1.nextInt();
             switch (main_key) {
                 case 1:
@@ -362,6 +362,21 @@ public class Main {
                     }
                     System.out.println("\n\n\n");
                         */
+                    break;
+                case 9:
+                    key = 9;
+                    /*Лабораторная работа 12*/
+                    Motor Motorik = new Motor();
+                    Motor Motorik1 = new Motor();
+                    Motorik.new_motor("FB20", 150, 4, 8, 4, 2.0);
+                    Motorik1.new_motor("2GR-FE", 249, 4, 10, 6, 3.5);
+                    
+                    System.out.println("Двигатель №1\n\nМаксимальное значение мощности в кВТ: " + Math.round(Motorik.Max_KWT()));
+                    System.out.println("Текущее значение мощности в кВТ: " + Math.round(Motorik.KWT()));
+
+                    System.out.println("\n\nДвигатель №2\n\nМаксимальное значение мощности в кВТ: " + Math.round(Motorik1.Max_KWT()));
+                    System.out.println("Текущее значение мощности в кВТ: " + Math.round(Motorik1.KWT()));
+                    
                     break;
             }
         } while (main_key != 0);

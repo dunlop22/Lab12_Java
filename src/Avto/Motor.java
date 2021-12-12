@@ -3,8 +3,13 @@ package Avto;
 
 import java.util.Scanner;
 
+interface KWT
+{
+        double Max_KWT();
+        double KWT();
+}
 
-public class Motor {
+class Motor implements KWT {
     String name;
     double rab_obem;
     double koni;
@@ -12,6 +17,23 @@ public class Motor {
     double kol_vo_cilindr;
     double klapan;
     
+    public double Max_KWT()	//вывод максимально возможной мощности (в квтч) после апгрейда
+        {
+            if (this.rab_obem > 2.0)
+            {
+                return (this.koni * 1.2 / 1.3596);
+            }
+            else
+            {
+                return (this.koni * 1.1 / 1.3596);
+            }
+        }
+
+    public double KWT()	//вывод текущей мощности (в квтч)
+    {
+        return (this.koni / 1.3596);
+    }
+                
     public void vsego_koni(Help he)
         {
             he.vsego += this.koni;
