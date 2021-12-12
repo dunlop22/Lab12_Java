@@ -38,6 +38,14 @@ public class Koleso {
         kolvo_koles = kolvo_koles + 1;
     }
    
+    public Koleso(double diametr, double shirina, double visota, String tip_diska)
+    {
+        this.diametr = diametr;
+        this.shirina = shirina;
+        this.visota = visota;
+        this.tip_diska = tip_diska;
+    }
+            
     public void new_koleso_info()
     {
         Scanner in = new Scanner(System.in);        //инициализация сканера

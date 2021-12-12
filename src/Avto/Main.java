@@ -47,7 +47,7 @@ public class Main {
         Scanner in = new Scanner(System.in);        //инициализация сканера
         do
 	{
-            System.out.println("1) Общее\n2) Двигатель\n3) Коробка\n4) Колеса\n5) Автомобиль\n6) Конструкторы\n7) Одномерный массив параметром\n8) Двумерный массив\n\n0) - выход");
+            System.out.println("1) Общее\n2) Двигатель\n3) Коробка\n4) Колеса\n5) Автомобиль\n6) Конструкторы\n7) Конструктор производного класса с параметрами вызова конструктора базового класса\n8) Двумерный массив\n\n0) - выход");
             main_key = in1.nextInt();
             switch (main_key) {
                 case 1:
@@ -249,6 +249,10 @@ public class Main {
                     break;
                 case 7:
                     key = 9;
+                    /*Лабораторная работа 12*/
+                    Koleso_Zapaska Zapaska2 = new Koleso_Zapaska(235, 55, 17, "Литье", "Полноразмерное");
+                    Zapaska2.print();
+                    /*
                     Koleso Kol_mass[] = new Koleso[10];
                     Koleso temp = new Koleso();
                     int n;
@@ -266,6 +270,7 @@ public class Main {
                         Kol_mass[n] = temp;
                         Kol_mass[n].prosmotr_koleso();
                     }
+                    */
                     /*
                     {
                         Kol_mass[i] = new Koleso(12);

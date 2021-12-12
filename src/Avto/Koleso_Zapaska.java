@@ -7,7 +7,7 @@ public class Koleso_Zapaska extends Koleso
     }
     public Koleso_Zapaska(double shirina, double diametr, double visota, String tip_diska, String vid)
     {
-        super.new_koleso(shirina, diametr, visota, tip_diska);
+        super(diametr, shirina, visota, tip_diska);
         this.vid = vid;
     }
     
@@ -16,6 +16,7 @@ public class Koleso_Zapaska extends Koleso
         System.out.print("Вид запасного колеса: " + vid + "\n");
         super.prosmotr_koleso();
     }
+    
     public void set_vid(String vid)
     {
         this.vid = vid;
