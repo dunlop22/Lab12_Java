@@ -4,7 +4,19 @@ package Avto;
 import java.io.IOException;
 import java.util.Scanner;
 
-class Koleso extends Koleso_inf {
+class Koleso extends Koleso_inf implements Cloneable{
+    
+    public Object clone()
+    {
+        try
+        {
+        return (Koleso)super.clone();
+        }
+        catch(CloneNotSupportedException e)
+        {
+        }
+        return this;
+    }
     
     public double perimetr()
     {
@@ -215,10 +227,6 @@ class Koleso extends Koleso_inf {
         System.out.println("Высота: " + this.visota);
         System.out.println("Диаметр: " + this.diametr);      
         System.out.println("Тип диска: " + this.tip_diska);
-        if (this.otnoschenie > 0)
-        {
-            System.out.println("Высота (мм): " + this.otnoschenie);    
-        }
     }
 
 }

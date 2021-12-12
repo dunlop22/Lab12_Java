@@ -47,7 +47,7 @@ public class Main {
         Scanner in = new Scanner(System.in);        //инициализация сканера
         do
 	{
-            System.out.println("1) Общее\n2) Двигатель\n3) Коробка\n4) Колеса\n5) Автомобиль\n6) Конструкторы\n7) Конструктор производного класса с параметрами вызова конструктора базового класса\n8) Абстрактный класс\n9) Интерфейс\n\n0) - выход");
+            System.out.println("1) Общее\n2) Двигатель\n3) Коробка\n4) Колеса\n5) Автомобиль\n6) Конструкторы\n7) Конструктор производного класса с параметрами вызова конструктора базового класса\n8) Абстрактный класс\n9) Интерфейс\n0) Копирование");
             main_key = in1.nextInt();
             switch (main_key) {
                 case 1:
@@ -378,7 +378,43 @@ public class Main {
                     System.out.println("Текущее значение мощности в кВТ: " + Math.round(Motorik1.KWT()));
                     
                     break;
+                case 0:
+                    key = 9;
+                    /*Лабораторная работа 12*/
+                    Koleso kol1 = new Koleso();
+                    Koleso kol2 = new Koleso();
+                    Koleso kol3 = new Koleso();
+                    Koleso kol4 = new Koleso();
+                    System.out.println("До мелкого копирования:");
+                    kol1.prosmotr_koleso();
+                    System.out.println();
+                    kol2.prosmotr_koleso();
+                    
+                    kol2 = kol1;
+                    kol2.new_koleso(235, 18, 20, "Ковка");
+                    
+                    System.out.println("\n\nПосле мелкого копирования:");
+                    kol1.prosmotr_koleso();
+                    System.out.println();
+                    kol2.prosmotr_koleso();
+                    System.out.println();
+                    
+                    
+                    
+                    
+                    System.out.println("\n\n\nДо глубокого копирования:");
+                    kol3.prosmotr_koleso();
+                    System.out.println();
+                    kol4.prosmotr_koleso();
+                    kol4=(Koleso)kol3.clone();
+                    kol4.new_koleso(285, 21, 66, "Литье Japan");
+                    System.out.println("\n\nПосле глубокого копирования:");
+                    kol3.prosmotr_koleso();
+                    System.out.println();
+                    kol4.prosmotr_koleso();
+                    System.out.println();
+                    break;
             }
-        } while (main_key != 0);
+        } while (true);
     }
 }
