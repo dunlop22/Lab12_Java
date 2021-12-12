@@ -4,7 +4,18 @@ package Avto;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Koleso {
+class Koleso extends Koleso_inf {
+    
+    public double perimetr()
+    {
+        double duim = 25.375;
+        return (((this.diametr / 2 * (int)duim) + this.visota * this.shirina / 100) * 2 * (int)Math.PI);
+    }
+    public double obem()
+    {
+        double duim = 25.375;
+        return (Math.PI * (this.diametr * duim / 1000) * (this.diametr * duim / 1000) * this.shirina / 1000);
+    }
     
     public double shirina;
     public double visota;

@@ -47,7 +47,7 @@ public class Main {
         Scanner in = new Scanner(System.in);        //инициализация сканера
         do
 	{
-            System.out.println("1) Общее\n2) Двигатель\n3) Коробка\n4) Колеса\n5) Автомобиль\n6) Конструкторы\n7) Конструктор производного класса с параметрами вызова конструктора базового класса\n8) Двумерный массив\n\n0) - выход");
+            System.out.println("1) Общее\n2) Двигатель\n3) Коробка\n4) Колеса\n5) Автомобиль\n6) Конструкторы\n7) Конструктор производного класса с параметрами вызова конструктора базового класса\n8) Абстрактный класс\n\n0) - выход");
             main_key = in1.nextInt();
             switch (main_key) {
                 case 1:
@@ -292,6 +292,11 @@ public class Main {
                     break;
                 case 8:
                     key = 9;
+                    /*Лабораторная работа 12*/
+                    Koleso info = new Koleso(18, 265, 45, "Литье");
+                    System.out.printf("Объем колеса: " + info.obem()+ "м^3\n\n");
+                    System.out.printf("Периметр колеса: " + info.perimetr()+ "мм\n\n");
+                    /*
                     Koleso[][] Kol_mass_ = new Koleso[4][4];
                     Koleso temp1 = new Koleso();
                     
@@ -324,7 +329,7 @@ public class Main {
                         System.out.print("0) Выход в меню\nЛюбая клавиша - продолжение заполнения массива");
                         podmenu = in.nextInt();
                     } while (podmenu != 0);
-                    
+                    */
                     /*System.out.println("Введите количество коробок в массиве: ");
                     int m;
                     m = -1;
